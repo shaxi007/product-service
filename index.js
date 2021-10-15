@@ -3,12 +3,20 @@ const express = require('express')
 const { Pool } = require('pg')
 
 const pool = new Pool({
-	host: 'localhost',
-	user: 'postgres',
-	password: 'postgres',
+	host: 'satao.db.elephantsql.com',
+	user: 'zxfjcmvf',
+	password: 'Sm51J18C_aNg93MFeUerZ-3G8n-NZCm7',
 	port: '5432',
-	database: 'app',
+	database: 'zxfjcmvf',
 })
+
+;(async () => {
+
+	const client = await pool.connect()
+
+	console.log(client)
+
+})()
 
 const app = express()
 
