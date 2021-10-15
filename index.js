@@ -1,5 +1,15 @@
 const express = require('express')
 
+const { Pool } = require('pg')
+
+const pool = new Pool({
+	host: 'localhost',
+	user: 'postgres',
+	password: 'postgres',
+	port: '5432',
+	database: 'app',
+})
+
 const app = express()
 
 app.get('/', (_, res) => res.send("Public API Example"))
